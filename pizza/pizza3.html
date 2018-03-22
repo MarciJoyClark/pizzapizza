@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<title>Pizza Hut: Make your own pizza!</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main2.css">
+		<link rel="stylesheet" href="css/calculator.css">
+		<style>
+			body, html {
+			height: 100%;
+			margin: 0;
+			}
+
+		.bg {
+			background-image: url("bg.png");
+			height: 100%; 
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		</style>
+</head>
+  
+ <body> 
+<!--Background-->
+<div class="bg">
+<div class="container">
+<div class="menu">
+
+<!--Main menu-->
+
+<form action="" id="pizza" onsubmit="return false:">
+	<div class="block" id="intro">
+    <h1>Let us get to know you</h1>
+    <p>Here at Pizza Hut, you're family. Please tell us a bit about yourself!</p>
+		<fieldset>
+		  <div class="row">
+			<input class="row-col-half" type="text" placeholder="Full Name" value="Full Name" required="required">
+		  </div>
+		  <div class="row">
+			<input class="row-col-half" type="text" placeholder="E-mail" value="E-mail" required="required">
+		  </div>
+		  <div class="row">
+			<input class="row-col-half" type="text" placeholder="Address" value="Address" required="required">
+          </div>	
+	</div>
+		 </fieldset>
+			 
+	<div class="block" id="size">
+    <h4>Please select your size</h4>
+		<p>Choose the size that's just right for you!
+		<fieldset id="size">
+				<div class="row">
+				<input class="size"  type="radio" name="size" value="ExtraL" onClick="calculateTotal()">
+				<label for="option"><span><span></span></span>Extra Large</label>
+			    </div>
+			
+				<div class="row">
+				<input class="size"  type="radio" name="size" value="Large" onClick="calculateTotal()">
+				<label for="size"><span><span></span></span>Large</label>
+				</div>
+							
+				<div class="row">
+				<input class="size"  type="radio" name="size" value="Medium" onClick="calculateTotal()">
+				<label for="option"><span><span></span></span>Medium</label>
+				</div>
+				
+				<div class="row">
+				<input class="size"  type="radio" name="size" value="Personal" onClick="calculateTotal()">
+				<label for="option"><span><span></span></span>Personal</label>
+				</div>
+		</fieldset>
+	</div>
+
+  <div class="block" id="crust">
+    <h4>Select your crust</h4>
+    <p>Please select one of our delicious crusts!</p>
+    <fieldset>
+      <div class="row">
+				<input class="crust"  type="radio" name="crust" value="Plain">
+				<label for="option"><span><span></span></span>Plain</label>
+			    </div>
+			
+				<div class="row">
+				<input class="crust"  type="radio" name="crust" value="House Special">
+				<label for="option"><span><span></span></span>House Special</label>
+				</div>
+							
+				<div class="row">
+				<input class="crust"  type="radio" name="crust" value="Garlic Butter">
+				<label for="option"><span><span></span></span>Garlic Butter</label>
+				</div>
+				
+				<div class="row">
+				<input class="crust"  type="radio" name="crust" value="Cheese-stuffed">
+				<label for="option"><span><span></span></span>Cheese-stuffed</label>
+				</div>
+				
+				<div class="row">
+				<input class="crust"  type="radio" name="crust" value="Spicy">
+				<label for="option"><span><span></span></span>Spicy</label>
+				</div>
+    </fieldset>
+  </div>
+ 
+ <div class="block" id="sauce">
+    <h4>SAAAAUCE!</h4>
+    <p>Go for it! Select your fave sauce - even if that means no sauce!</p>
+    <fieldset>
+			<div class="row">
+				<input class="sauce"  type="radio" name="sauce" value="House Marinara">
+				<label for="option"><span><span></span></span>House Marinara</label>
+			</div>
+							
+			<div class="row">
+				<input class="sauce"  type="radio" name="sauce" value="White">
+				<label for="option"><span><span></span></span>White</label>
+			</div>
+				
+			<div class="row">
+				<input class="sauce"  type="radio" name="sauce" value="BBQ">
+				<label for="option"><span><span></span></span>BBQ</label>
+			</div>
+				
+			<div class="row">
+				<input class="sauce"  type="radio" name="sauce" value="None, thanks!">
+				<label for="option"><span><span></span></span>None, thanks!</label>
+			</div>
+	</fieldset>
+</div>
+ 
+ <div class="block" id="cheese">
+    <h4>Cheese!</h4>
+		<p>Go ahead - choose your cheese!</p>
+		<fieldset>
+				<div class="row">
+				<input class="cheese"  type="radio" name="cheese" value="Regular">
+				<label for="option"><span><span></span></span>Regular</label>
+				</div>
+							
+				<div class="row">
+				<input class="cheese"  type="radio" name="cheese" value="No thanks!">
+				<label for="option"><span><span></span></span>No thanks!</label>
+				</div>
+				
+				<div class="row">
+				<input class="cheese"  type="radio" name="cheese" value="ExCheese">
+				<label for="option"><span><span></span></span>Extra Cheese</label>
+				</div>
+	</fieldset>
+  </div>
+  
+  <div class="block" id="meat">
+    <h4>Meat Me!</h4>
+    <p>Now's the time to pick your proteins</p>
+    <fieldset>
+				<div class="row">
+					<input class="meat"  type="checkbox" name="meat" value="Pepperoni">
+				<label for="option"><span><span></span></span>Pepperoni</label>
+					&nbsp &nbsp &nbsp &nbsp &nbsp 			
+					<input class="meat"  type="checkbox" name="meat" value="ItalianSau">
+				<label for="option"><span><span></span></span>Italian Sausage</label>
+				</div>
+				
+				<div class="row">
+					<input class="meat"  type="checkbox" name="meat" value="CanBac">
+				<label for="option"><span><span></span></span>Canadian Bacon</label>
+					<input  class="meat" type="checkbox" name="meat" value="GrBeef">
+				<label for="option"><span><span></span></span>Ground Beef</label>
+				</div>
+				
+				<div class="row">
+					<input class="meat"  type="checkbox" name="meat" value="Anchovies">
+				<label for="option"><span><span></span></span>Anchovies</label>
+					&nbsp &nbsp &nbsp &nbsp &nbsp 
+					<input class="meat"  type="checkbox" name="meat" value="Chicken">
+				<label for="option"><span><span></span></span>Chicken</label>
+				</div>
+				
+				<div class="row">
+					<input class="meat"  type="checkbox" name="meat" value="VegOnly">
+				<label for="option"><span><span></span></span>Veggies only, thanks!</label>
+				</div>
+	</fieldset>
+  </div>  
+  
+    <div class="block" id="veg">
+    <h4>Fresh vegetables and fruit</h4>
+    <p>Don't forget your greens!</p>
+    <fieldset>
+				<div class="row">
+					<input class="veg"  type="checkbox" name="veg" value="Tomatoes">
+				<label for="option"><span><span></span></span>Tomatoes</label>
+					&nbsp &nbsp &nbsp
+					<input class="veg"  type="checkbox" name="veg" value="Red Onion">
+				<label for="option"><span><span></span></span>Red Onion</label>
+				</div>
+				
+				<div class="row">
+					<input class="veg"  type="checkbox" name="veg" value="Olives">
+				<label for="option"><span><span></span></span>Olives</label>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<input class="veg"  type="checkbox" name="veg" value="Green Bell Peppers">
+				<label for="option"><span><span></span></span>Green Bell Peppers</label>
+				</div>
+				
+				<div class="row">
+					<input class="veg"  type="checkbox" name="veg" value="Mushrooms">
+				<label for="option"><span><span></span></span>Mushrooms</label>
+					&nbsp 
+					<input  class="veg" type="checkbox" name="veg" value="Spinach">
+				<label for="option"><span><span></span></span>Spinach</label>
+				</div>
+				
+				<div class="row">
+					<input class="veg"  type="checkbox" name="veg" value="Jalapenos">
+				<label for="option"><span><span></span></span>Jalapenos</label>
+					&nbsp &nbsp &nbsp 
+					<input  class="veg" type="checkbox" name="veg" value="Pineapple">
+				<label for="option"><span><span></span></span>Pineapple</label>
+				</div>
+	</fieldset>
+  </div>   
+   <div class="block" id="receipt">
+	<h4>Check-out!</h4>
+	<p>Please review your order carefully.</p>
+	<fieldset>
+			<div class="cart">
+				<div id="title1"><h4>Selected Items: </h4></div>
+				<div id="title2:"><h5>Subtotal: <h5></div>
+				<div id="showText1"></div>
+				<div id="showText2"></div>
+				<div id="totalPrice1"><h4>Your total comes to: </h3></div>
+				<div id="totalPrice2"></div>				
+			</div>
+		</fieldset>
+    </div>
+</form>
+</div>
+</div>
+</div>
+<!--/main menu-->
+	<script src="calc.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="index.js"></script>
+
+<script>
+
+function getReceipt() {
+	text1="";
+	text2="";
+	var runningTotal=0;
+	var SizeTotal=0;
+	var sizeArray = document.getElementsByClassName("size");
+
+	for(var i = 0; i < sizeArray.length; i++) {
+	
+		if(sizeArray[i].checked)
+			var selectedSize = sizeArray[i].value;
+			text1 = text1+selectedSize+"<br>";
+		}
+}
+if 
+	selectedSize =="ExtraL" {sizeTotal==16;
+	text2=text2+sizeTotal+"<br>";}
+else if
+	selectedSize=="Large" {sizeTotal==14;
+	text2=text2+sizeTotal+"<br>";}
+else if
+	selectedSize=="Medium" {sizeTotal==10;
+	text2=text2+sizeTotal+"<br>";}
+else if
+	selectedSize"Personal" {sizeTotal==6;
+	text2=text2+sizeTotal+"<br>";}
+
+	runningTotal = sizeTotal;
+	getCrust(runningTotal,text1,text2);	
+};
+
+function getCrust(runningTotal,text1,text2) {
+var crustTotal = 0;
+var selectedCrust;
+var crustArray = document.getElementsByClassName("crust");
+
+for (var j = 0; j < crustArray.length; j++) {
+		if (crustArray[j].checked) {
+			selectedCrust = crustArray[j].value;
+			text1 = text1 + selectedCrust + "<br>";
+		}
+		if (selectedCrust === "Cheese-Stuffed") {
+			crustTotal = 3;
+		}
+}	runningTotal = (runningTotal + crustTotal);
+	getSauce(runningTotal,text1,text2);	
+};
+	
+function getSauce(runningTotal,text1,text2) {
+	var sauceArray = document.getElementsByClassName("sauce");
+	for (var j = 0; j < sauceArray.length; j++) {
+		if (sauceArray[j].checked) {
+		selectedSauce = sauceArray[j].value;
+		text1 = text1 + selectedSauce +"<br>";}
+	}
+		text2 = text2 + 0 + "<br>";
+		getCheese(runningTotal,text1,text2)
+};
+
+function getCheese(runningTotal,text1,text2) {
+	var cheeseTotal = 0;
+	var selectedCheese = [];
+	var cheeseArray = document.getElementsByClassName("cheese");
+	for (var j = 0; j < cheeseArray.length; j++) {
+		if (cheeseArray[j].checked) {
+			selectedCheese = cheeseArray[j].value;}
+		if (selectedCheese === "ExCheese") {
+			cheeseTotal = 3;}
+	}
+	text2 = text2+cheeseTotal+"<br>";
+	text1 = text1+selectedCheese+"<br>";
+	runningTotal = (runningTotal + cheeseTotal);
+	getMeat(runningTotal,text1,text2);
+};
+
+function getMeat(runningTotal,text1,text2) {
+	var runningTotal = runningTotal;
+	var meatTotal=0;
+	var meat-price=[];
+	var meatArray = document.getElementsByClassName("meat");
+	
+for(var j = 0; j < meatArray.length; j++) {
+		if(meatArray[j].checked)
+			meat-price.push(meatArray[j].value);
+	}
+}			
+	var MeatCount = meat-price.length;
+		if MeatCount >1) {
+			meatTotal=(MeatCount -1);}
+		else {
+			meatCount = 0;
+	}
+runningTotal = (runningTotal+meatTotal);
+for (var j = 0; j < meat-price.length; j++) {
+		text1 = text1+meat-price[j]+"<br>";
+		if (meatCount <= 1) {
+				text2 = text2 + 0 + "<br>";
+				meatCount = meatCount - 1;} 
+		else if (meatCount == 2) {
+				text2 = text2 + 1 + "<br>";
+				meatCount = meatCount - 1;}
+		else {	text2 = text2 + 1 + "<br>";
+				meatCount = meatCount - 1;
+			}
+	}
+	getVeg(runningTotal,text1,text2);
+};
+
+function getVeg(runningTotal,text1,text2) {
+	var veggieTotal = 0;
+	var selectedVeggie = [];
+	var veggieArray = document.getElementsByClassName("veg");
+	for (var j = 0; j < veggieArray.length; j++) {
+		if (veggieArray[j].checked) {
+			selectedVeggie.push(veggieArray[j].value);
+		}
+	}
+	var veggieCount = selectedVeggie.length;
+	if (veggieCount >= 2) {
+			veggieTotal = (veggieCount - 1);
+	} else {
+		veggieTotal = 0;
+	}
+	runningTotal = (runningTotal + veggieTotal);
+	for (var j = 0; j < selectedVeggie.length; j++) {
+			text1 = text1+selectedVeggie[j]+"<br>";
+			if (veggieCount <= 1) {
+				text2 = text2 + 0 + "<br>";
+				veggieCount = veggieCount - 1;
+			} else if (veggieCount == 2) {
+				text2 = text2 + 1 + "<br>";
+				veggieCount = veggieCount - 1;
+			} else {
+				text2 = text2 + 1 + "<br>";
+				veggieCount = veggieCount - 1;
+			}
+	}
+	runningTotal = (runningTotal,text1,text2);
+	text2 = text2 + runningTotal + "<br>";
+	document.getElementById("cart").style.opacity=1;
+	document.getElementById("showText1").innerHTML=text1;
+	document.getElementById("showText2").innerHTML=text2;
+	document.getElementById("totalPrice2").innerHTML = "</h3>$"+runningTotal+".00"+"</h3>";
+});
+
+</script>
+</body>
+</html>
