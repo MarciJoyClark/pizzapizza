@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Multi step form</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<h1>Custom multi step form</h1>
+<h2>⚡️ ⚡️ ⚡️</h2>
+<form>
+  <div class="block" id="intro">
+    <h3>Learning is cool.</h3>
+    <p>Lorem Khaled Ipsum is a major key to success. Bless up. Mogul talk. Find peace, life is like a water fall, you’ve gotta flow.</p><a href="http://khaledipsum.com/" target="blank"><i class="fa fa-hand-o-right"></i> www.khaledipsum.com </a>
+  </div>
+  <div class="block" id="sexe">
+    <h4>1 &mdash; Surround yourself with angels</h4>
+    <p>Positive energy, beautiful people, beautiful souls.</p>
+    <fieldset>
+      <div class="row choice">
+        <label class="row-col-half"><i class="fa fa-male"></i>
+          <input type="radio" name="gender" value="female"/><span>Male</span>
+        </label>
+        <label class="row-col-half"><i class="fa fa-female"></i>
+          <input type="radio" name="gender" value="female"/><span>Female</span>
+        </label>
+      </div>
+    </fieldset>
+    <p class="info"><i class="fa fa-info"></i> No discrimination intended for not allowing other genders than male/female. Just keepin' it simple 🙅</p>
+  </div>
+  <div class="block" id="user">
+    <h4>2 &mdash; You a genius. Bless up</h4>
+    <p>The key to more success is to get a massage once a week, very important, major key.</p>
+    <fieldset><i class="fa fa-child"></i>
+      <div class="row">
+        <input class="row-col-half" type="text" placeholder="First Name" required="required"/>
+        <input class="row-col-half" type="text" placeholder="Last Name" required="required"/>
+      </div>
+    </fieldset>
+    <div class="divider"></div>
+    <fieldset><i class="fa fa-rocket"></i>
+      <input class="row" type="mail" placeholder="Email address" required="required"/>
+    </fieldset>
+  </div>
+  <div class="block" id="date">
+    <h4>3 &mdash; The first of the month is coming</h4>
+    <fieldset><i class="fa fa-calendar-o"></i>
+      <input class="row" type="date" placeholder="Birthdate"/>
+    </fieldset>
+    <p class="info"><i class="fa fa-info"></i> They will try to close the door on you, just open it. To succeed you must believe. When you believe, you will succeed.</p>
+  </div>
+  <div class="block" id="country">
+    <h4>4 &mdash; Cocoa butter is the key</h4>
+    <p class="info"><i class="fa fa-hand-spock-o"></i> Choose wisely :</p>
+    <div class="divider"></div>
+    <fieldset>
+      <div class="row choice">
+        <label class="row-col-one-third"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>Belgium</span>
+        </label>
+        <label class="row-col-one-third"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>France</span>
+        </label>
+        <label class="row-col-one-third"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>Italy</span>
+        </label>
+        <label class="row-col-half"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>Germany</span>
+        </label>
+        <label class="row-col-half"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>Luxemburg</span>
+        </label>
+        <label class="row-col-two-third"><i class="fa fa-tag"></i>
+          <input type="radio" name="gender" value="female"/><span>The Netherlands</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <div class="block" id="address">
+    <h4>5 &mdash; Cocoa butter is the key  </h4>
+    <fieldset><i class="fa fa-map-signs"></i>
+      <div class="row">
+        <input class="row-col-two-third" type="text" placeholder="Adress" required="required"/>
+        <input class="row-col-one-third" type="number" placeholder="Postcode" required="required"/>
+      </div>
+    </fieldset>
+    <fieldset><i class="fa fa-map"></i>
+      <input class="row" type="text" placeholder="State" required="required"/>
+    </fieldset>
+    <div class="divider"></div>
+    <p class="info"><i class="fa fa-hand-lizard-o"></i> I’m never giving up, I’m just getting started.</p>
+  </div>
+  <div class="block" id="else">
+    <h4>6 &mdash; Mogul talk</h4>
+    <p>Cloth talk. It’s on you how you want to live your life.</p>
+    <div class="divider"></div>
+    <fieldset><i class="fa fa-pencil"></i>
+      <textarea class="row" placeholder="You see that bamboo ?"></textarea>
+    </fieldset>
+  </div>
+</form>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
