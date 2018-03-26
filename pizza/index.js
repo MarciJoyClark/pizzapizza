@@ -1,6 +1,6 @@
 $('.block:first')
   .addClass('current first')
-  .append('<span class="btn" id="next">Lets go!</span>');
+  .append('<span class="btn" id="next">Lets go!</span>')
   
 $('.block:last')
   .addClass('empty last')
@@ -10,7 +10,7 @@ $('.block').not(':first, :last')
   .addClass('empty')
   .append('<span class="btn" id="next">Next<i class="fa fa-hand-o-right"></i></span>')
   .append('<span class="btn" id="prev">Prev</span>');
-
+  
 $('.btn').click( function() {
   var dir = event.target.id;
   var current = $('.current'),
@@ -25,9 +25,12 @@ $('.btn').click( function() {
     current.removeClass('current').addClass('empty');
     prev.removeClass('filled').addClass('current');
   }
-});
 
 $(':input[required]').closest('.block').addClass('mandatory');
+});
+
+;
+
 
 /* When 'nth-last-child2 is brought into the code, everything stops working. 
 I don't know what I did wrong with it. Use the below code to see what I mean.
