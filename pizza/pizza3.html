@@ -50,22 +50,22 @@
 		<p>Choose the size that's just right for you!
 		<fieldset id="size">
 				<div class="row">
-				<input class="size"  type="radio" name="size" value="ExtraL" onClick="calculateTotal()">
+				<input class="size"  type="radio" name="size" value="ExtraL">
 				<label for="option"><span><span></span></span>Extra Large</label>
 			    </div>
 			
 				<div class="row">
-				<input class="size"  type="radio" name="size" value="Large" onClick="calculateTotal()">
+				<input class="size"  type="radio" name="size" value="Large">
 				<label for="size"><span><span></span></span>Large</label>
 				</div>
 							
 				<div class="row">
-				<input class="size"  type="radio" name="size" value="Medium" onClick="calculateTotal()">
+				<input class="size"  type="radio" name="size" value="Medium">
 				<label for="option"><span><span></span></span>Medium</label>
 				</div>
 				
 				<div class="row">
-				<input class="size"  type="radio" name="size" value="Personal" onClick="calculateTotal()">
+				<input class="size"  type="radio" name="size" value="Personal">
 				<label for="option"><span><span></span></span>Personal</label>
 				</div>
 		</fieldset>
@@ -248,32 +248,35 @@ function getReceipt() {
 	text1="";
 	text2="";
 	var runningTotal=0;
-	var SizeTotal=0;
+	var sizeTotal=0;
 	var sizeArray = document.getElementsByClassName("size");
 
 	for(var i = 0; i < sizeArray.length; i++) {
 	
-		if(sizeArray[i].checked)
+		if(sizeArray[i].checked) {
 			var selectedSize = sizeArray[i].value;
-			text1 = text1+selectedSize+"<br>";
-		}
+			text1 = text1+selectedSize+"<br>";}
 }
 if 
-	selectedSize =="ExtraL" {sizeTotal==16;
+	(selectedSize ="ExtraL") {
+	sizeTotal=16;
 	text2=text2+sizeTotal+"<br>";}
 else if
-	selectedSize=="Large" {sizeTotal==14;
+	(selectedSize="Large") {
+	sizeTotal==14;
 	text2=text2+sizeTotal+"<br>";}
 else if
-	selectedSize=="Medium" {sizeTotal==10;
+	(selectedSize="Medium") {
+	sizeTotal==10;
 	text2=text2+sizeTotal+"<br>";}
 else if
-	selectedSize"Personal" {sizeTotal==6;
+	(selectedSize="Personal") {
+	sizeTotal==6;
 	text2=text2+sizeTotal+"<br>";}
 
 	runningTotal = sizeTotal;
 	getCrust(runningTotal,text1,text2);	
-};
+;
 
 function getCrust(runningTotal,text1,text2) {
 var crustTotal = 0;
@@ -322,23 +325,23 @@ function getCheese(runningTotal,text1,text2) {
 function getMeat(runningTotal,text1,text2) {
 	var runningTotal = runningTotal;
 	var meatTotal=0;
-	var meat-price=[];
+	var meatPrice=[];
 	var meatArray = document.getElementsByClassName("meat");
 	
 for(var j = 0; j < meatArray.length; j++) {
 		if(meatArray[j].checked)
-			meat-price.push(meatArray[j].value);
+			meatPrice.push(meatArray[j].value);
 	}
 }			
-	var MeatCount = meat-price.length;
-		if MeatCount >1) {
+	var MeatCount = meatPrice.length;
+		if (MeatCount >1) {
 			meatTotal=(MeatCount -1);}
 		else {
 			meatCount = 0;
 	}
 runningTotal = (runningTotal+meatTotal);
-for (var j = 0; j < meat-price.length; j++) {
-		text1 = text1+meat-price[j]+"<br>";
+for (var j = 0; j < meatPrice.length; j++) {
+		text1 = text1+meatPrice[j]+"<br>";
 		if (meatCount <= 1) {
 				text2 = text2 + 0 + "<br>";
 				meatCount = meatCount - 1;} 
@@ -387,7 +390,7 @@ function getVeg(runningTotal,text1,text2) {
 	document.getElementById("showText1").innerHTML=text1;
 	document.getElementById("showText2").innerHTML=text2;
 	document.getElementById("totalPrice2").innerHTML = "</h3>$"+runningTotal+".00"+"</h3>";
-});
+};
 
 </script>
 </body>
