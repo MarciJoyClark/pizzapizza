@@ -333,9 +333,9 @@ for(var j = 0; j < meatArray.length; j++) {
 			meatPrice.push(meatArray[j].value);
 	}
 }			
-	var MeatCount = meatPrice.length;
-		if (MeatCount >1) {
-			meatTotal=(MeatCount -1);}
+	var meatCount = meatPrice.length;
+		if (meatCount >1) {
+			meatTotal=(meatCount -1);}
 		else {
 			meatCount = 0;
 	}
@@ -386,6 +386,10 @@ function getVeg(runningTotal,text1,text2) {
 	}
 	runningTotal = (runningTotal,text1,text2);
 	text2 = text2 + runningTotal + "<br>";
+	
+		console.log("selected item:+ text1);
+		console.log("Running Total: "+runningTotal);
+		
 	document.getElementById("cart").style.opacity=1;
 	document.getElementById("showText1").innerHTML=text1;
 	document.getElementById("showText2").innerHTML=text2;
