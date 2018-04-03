@@ -220,20 +220,23 @@
 				</div>
 	</fieldset>
   </div>   
-   <div class="block" id="receipt">
+<div class="block" id="receipt">
 	<h4>Check-out!</h4>
 	<p>Please review your order carefully.</p>
+	<input id="btnOrder" type="button" onclick="getReceipt()" value ="Receipt">
 	<fieldset>
-			<div class="cart">
-				<div id="title1"><h4>Selected Items: </h4></div>
-				<div id="title2:"><h5>Subtotal: <h5></div>
+		<div class="controls">
+			<div id="cart">
+				<div id="title1"><h4>Selected Items: </h4></div>				
+				<div id="title2:"><h4>Subtotal: <h4></div>				
 				<div id="showText1"></div>
 				<div id="showText2"></div>
 				<div id="totalPrice1"><h4>Your total comes to: </h3></div>
 				<div id="totalPrice2"></div>				
 			</div>
-		</fieldset>
-    </div>
+		</div>
+		</fieldset>    
+</div>
 </form>
 </div>
 </div>
@@ -245,8 +248,8 @@
 <script>
 
 function getReceipt() {
-	text1="";
-	text2="";
+	text1=" ";
+	text2=" ";
 	var runningTotal=0;
 	var sizeTotal=0;
 	var sizeArray = document.getElementsByClassName("size");
@@ -273,10 +276,13 @@ else if
 	(selectedSize="Personal") {
 	sizeTotal==6;
 	text2=text2+sizeTotal+"<br>";}
-
 	runningTotal = sizeTotal;
 	getCrust(runningTotal,text1,text2);	
-;
+	
+	console.log("selected item: "+ text1);
+console.log("Running Total : "+ runningTotal);
+};
+
 
 function getCrust(runningTotal,text1,text2) {
 var crustTotal = 0;
@@ -293,7 +299,11 @@ for (var j = 0; j < crustArray.length; j++) {
 		}
 }	runningTotal = (runningTotal + crustTotal);
 	getSauce(runningTotal,text1,text2);	
+	
+	console.log("selected item: "+ text1);
+console.log("Running Total : "+ runningTotal);
 };
+
 	
 function getSauce(runningTotal,text1,text2) {
 	var sauceArray = document.getElementsByClassName("sauce");
@@ -332,7 +342,7 @@ for(var j = 0; j < meatArray.length; j++) {
 		if(meatArray[j].checked)
 			meatPrice.push(meatArray[j].value);
 	}
-}			
+			
 	var meatCount = meatPrice.length;
 		if (meatCount >1) {
 			meatTotal=(meatCount -1);}
@@ -353,7 +363,10 @@ for (var j = 0; j < meatPrice.length; j++) {
 			}
 	}
 	getVeg(runningTotal,text1,text2);
+	console.log("selected item: "+ text1);
+console.log("Running Total : "+ runningTotal);
 };
+
 
 function getVeg(runningTotal,text1,text2) {
 	var veggieTotal = 0;
@@ -384,12 +397,12 @@ function getVeg(runningTotal,text1,text2) {
 				veggieCount = veggieCount - 1;
 			}
 	}
-	runningTotal = (runningTotal,text1,text2);
+	
 	text2 = text2 + runningTotal + "<br>";
 	
-		console.log("selected item:+ text1);
-		console.log("Running Total: "+runningTotal);
-		
+	console.log("selected item: "+ text1);
+    console.log("Running Total : "+ runningTotal);
+	
 	document.getElementById("cart").style.opacity=1;
 	document.getElementById("showText1").innerHTML=text1;
 	document.getElementById("showText2").innerHTML=text2;
